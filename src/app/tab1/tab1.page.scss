@@ -1,0 +1,17 @@
+:host{
+    .gender-input{
+        display: flex;
+    }
+    .dob-content{
+        display: flex;
+        justify-content: space-between;
+    }
+    ion-datetime-button{
+        display: contents;
+    }
+    .home-address{
+        display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+}

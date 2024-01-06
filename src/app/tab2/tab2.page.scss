@@ -1,0 +1,13 @@
+:host{
+    
+    div{
+        display: flex;
+        ion-title{
+            display: block;
+        }
+    }
+    ion-card-content{
+        background: beige;
+        border: 3px solid darkred;
+    }
+}

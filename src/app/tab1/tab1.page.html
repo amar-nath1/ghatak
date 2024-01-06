@@ -1,17 +1,162 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-title>Signup Form</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <!-- Gender -->
+    <ion-card class="ion-margin ion-padding">
+      <ion-label>Gender</ion-label>
+      <ion-radio-group formControlName="gender" class="gender-input">
+        <ion-item *ngFor="let option of genderOptions">
+          <ion-label>{{ option }}</ion-label>
+          <ion-radio [value]="option"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-card>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <!-- Date of Birth -->
+    <!-- <ion-item>
+      <ion-label>Date of Birth</ion-label>
+      <ion-datetime display-format="MM/DD/YYYY" formControlName="dateOfBirth"></ion-datetime>
+    </ion-item> -->
+
+    <ion-card class="ion-margin ion-padding">
+      <ion-card-content class="dob-content">
+        <ion-label>Date of Birth</ion-label>
+        <ion-datetime-button  color="tertiary" datetime="datetime"></ion-datetime-button>
+      </ion-card-content>
+     
+    </ion-card>
+    
+
+<ion-modal [keepContentsMounted]="true">
+  <ng-template>
+    <ion-datetime formControlName="dateOfBirth" presentation="date" id="datetime"></ion-datetime>
+  </ng-template>
+</ion-modal>
+
+    <!-- Mobile No -->
+   
+     <ion-card>
+      <ion-card-content>
+      <ion-input type="number" placeholder="Enter Mobile Number" formControlName="mobileNo"></ion-input>
+    </ion-card-content>
+    </ion-card>
+
+    <!-- Guardian Full Name -->
+    <ion-card>
+      <ion-card-content>
+        <ion-input placeholder="Guardian Full Name" formControlName="guardianFullName"></ion-input>
+      </ion-card-content>
+    </ion-card>
+    
+
+    <!-- Caste -->
+    <ion-card>
+      <ion-card-content>
+      <ion-label>Caste</ion-label>
+      <ion-select placeholder="Please select your caste" formControlName="caste">
+        <ion-select-option *ngFor="let option of casteOptions" [value]="option">{{ option }}</ion-select-option>
+      </ion-select>
+    </ion-card-content>
+    </ion-card>
+
+    <!-- Gotra -->
+    
+      <ion-card>
+        <ion-card-content>
+          <ion-label>Gotra</ion-label>
+          <ion-select placeholder="Please select your Gotra" formControlName="gotra">
+            <ion-select-option *ngFor="let option of gotraOptions" [value]="option">{{ option }}</ion-select-option>
+          </ion-select>
+        </ion-card-content>
+      </ion-card>
+      
+    
+
+    <!-- Belongs to (District and Village) -->
+    <ion-card>
+      <ion-card-content>
+        <div class="home-address">
+          <div>
+      <ion-label>Belongs to</ion-label></div>
+    <div>
+      <ion-select placeholder="District" formControlName="district">
+        <ion-select-option *ngFor="let option of districtOptions" [value]="option">{{ option }}</ion-select-option>
+      </ion-select>
+    </div>
+    <div>
+      <ion-select placeholder="Vilage" formControlName="village">
+        <ion-select-option *ngFor="let option of villageOptions" [value]="option">{{ option }}</ion-select-option>
+      </ion-select>
+    </div>
+    <!-- </div>
+     <div class="home-address">
+      <div>
+      <ion-label>Village</ion-label></div> -->
+    
+    </div>
+    </ion-card-content>
+  </ion-card>
+
+    <!-- Lives in (State and City) -->
+    <ion-card>
+      <ion-card-content>
+        <div class="home-address">
+          <div>
+      <ion-label>Lives in</ion-label></div>
+        <div>
+      <ion-select placeholder="State" formControlName="state">
+        <ion-select-option *ngFor="let option of stateOptions" [value]="option">{{ option }}</ion-select-option>
+      </ion-select>
+      </div>
+   
+   
+        <div>
+      <ion-select placeholder="city" formControlName="city">
+        <ion-select-option *ngFor="let option of cityOptions" [value]="option">{{ option }}</ion-select-option>
+      </ion-select>
+    </div>
+  </div>
+</ion-card-content>
+</ion-card>
+
+    <!-- Education Qualification -->
+    <ion-card>
+      <ion-card-content>
+      <ion-label>Educational Qualification</ion-label>
+      <ion-select placeholder="Select Educational Qualification" formControlName="education">
+        <ion-select-option *ngFor="let option of educationOptions" [value]="option">{{ option }}</ion-select-option>
+      </ion-select>
+    </ion-card-content>
+    </ion-card>
+
+    <!-- Occupation -->
+    <ion-card>
+      <ion-card-content>
+      <ion-label>Occupation</ion-label>
+      <ion-select placeholder="Occupation" formControlName="occupation">
+        <ion-select-option *ngFor="let option of occupationOptions" [value]="option">{{ option }}</ion-select-option>
+      </ion-select>
+    </ion-card-content>
+  </ion-card>
+
+    <!-- Reference Person Name -->
+    <ion-item>
+      <ion-label position="floating">Reference Person Name</ion-label>
+      <ion-input formControlName="referencePersonName"></ion-input>
+    </ion-item>
+
+    <!-- Reference Person Number -->
+    <ion-item>
+      <ion-label position="floating">Reference Person Number</ion-label>
+      <ion-input type="tel" formControlName="referencePersonNumber"></ion-input>
+    </ion-item>
+
+    <!-- Submit Button -->
+    <ion-button color="danger" size="large" shape="round" class="ion-margin-vertical" expand="full" type="submit">Sign Up</ion-button>
+  </form>
 </ion-content>
