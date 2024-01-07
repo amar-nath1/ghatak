@@ -1,13 +1,20 @@
-:host{
-    
-    div{
-        display: flex;
-        ion-title{
-            display: block;
-        }
-    }
-    ion-card-content{
-        background: beige;
-        border: 3px solid darkred;
-    }
+:host {
+  //   div {
+  //     display: flex;
+  //     ion-title {
+  //       display: block;
+  //     }
+  //   }
+  .main-text {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.flex-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.card-header {
+  display: flex;
+  align-items: center;
 }

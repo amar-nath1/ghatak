@@ -1,19 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Home
-    </ion-title>
+    <ion-title> Home </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
+  <ion-card *ngFor="let i of userData">
     <ion-card-content>
-      <div>
-      <ion-title><b>From</b></ion-title><ion-title>dist, vill</ion-title></div>
-      <div> <ion-title><b>Age</b></ion-title><ion-title>28</ion-title></div>
-      <div> <ion-title><b>Education</b></ion-title><ion-title>Graduate</ion-title></div>
-      <div> <ion-title><b>Occupation</b></ion-title><ion-title>Doctor</ion-title></div>
+      <div class="card-header">
+        <img
+          src="../../assets/images/Profile-PNG-Free-Download.png.crdownload"
+          width="100"
+        />
+        <div class="main-text">
+          <ion-title class="ion-no-padding"><b>{{i.name}}</b></ion-title>
+          <h4>{{i.expectations}}</h4>
+        </div>
+      </div>
+      <div class="flex-container">
+        <ion-title><b>Gender</b></ion-title>
+        <ion-title>:</ion-title>
+        <ion-title>{{i.gender}}</ion-title>
+        <ion-title><b>Age</b></ion-title>
+        <ion-title>:</ion-title>
+        <ion-title>{{i.age}}</ion-title>
+        <ion-title><b>Education</b></ion-title>
+        <ion-title>:</ion-title>
+        <ion-title>{{i.education}}</ion-title>
+        <ion-title><b>Occupation</b></ion-title>
+        <ion-title>:</ion-title>
+        <ion-title>{{i.occupation}}</ion-title>
+      </div>
     </ion-card-content>
   </ion-card>
 </ion-content>
