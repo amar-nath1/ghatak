@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Home </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngFor="let i of userData">
+    <ion-card-content>
+      <div class="card-header">
+        <img
+          src="../../assets/images/hindu-wedding.png"
+          width="100"
+        />
+        <div class="main-text ion-margin-horizontal">
+          <ion-title class="ion-no-padding"><b>{{i.guardianFullName}}</b></ion-title>
+          <!-- <ion-title>{{i.gender}}, </ion-title> -->
+          <!-- <ion-title>{{i.age}}</ion-title> -->
+          <ion-title>{{i.education}}</ion-title>
+          <ion-title>{{i.occupation}}</ion-title>
+          <ion-title>{{i.village}}, {{i.district}}</ion-title>
+          
+          <!-- <h4>{{i.expectations}}</h4> -->
+        </div>
+      </div>
+      <!-- <div class="flex-container">
+        <ion-title><b>Gender</b></ion-title>
+        <ion-title>:</ion-title>
+        <ion-title>{{i.gender}}</ion-title>
+        <ion-title><b>Age</b></ion-title>
+        <ion-title>:</ion-title>
+        <ion-title>{{i.age}}</ion-title>
+        <ion-title><b>Education</b></ion-title>
+        <ion-title>:</ion-title>
+        <ion-title>{{i.education}}</ion-title>
+        <ion-title><b>Occupation</b></ion-title>
+        <ion-title>:</ion-title>
+        <ion-title>{{i.occupation}}</ion-title>
+      </div> -->
+    </ion-card-content>
+  </ion-card>
+</ion-content>

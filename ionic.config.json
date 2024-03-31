@@ -1,0 +1,7 @@
+{
+  "name": "ghatak",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

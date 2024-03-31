@@ -1,0 +1,20 @@
+:host {
+  //   div {
+  //     display: flex;
+  //     ion-title {
+  //       display: block;
+  //     }
+  //   }
+  .main-text {
+      
+
+  }
+}
+.flex-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.card-header {
+  display: flex;
+  align-items: center;
+}
